@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="ZhuContainerApp:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="ZhuContainerApp.war">
+      <element id="artifact" artifact-name="ZhuContainerApp:war exploded" />
+    </root>
+  </artifact>
+</component>
