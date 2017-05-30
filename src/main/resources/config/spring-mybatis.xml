@@ -72,7 +72,7 @@
         <property name="dataSource" ref="dataSource"/>
 
         <!-- 使用xml配置，自动扫描mapping.xml文件 -->
-        <property name="mapperLocations" value="classpath:zhu/app/model/*.xml"></property>
+        <property name="mapperLocations" value="classpath:mapper/*Mapper.xml"></property>
 
         <property name="typeAliasesPackage" value="zhu.app.model"/>
 

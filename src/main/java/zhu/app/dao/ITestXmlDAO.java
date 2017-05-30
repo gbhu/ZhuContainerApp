@@ -16,17 +16,12 @@ import zhu.app.model.Account;
 @Repository("testXmlDAO")
 public interface ITestXmlDAO {
 
-
-	public int addMoney(int userId, float money);
-	
-	public int minusMoney(int userId, float money);
-
 	@CacheEvict(value = {"indexCache"},allEntries = true,beforeInvocation = true)
 	public int insertAccount(Account account);
 
-	@Cacheable(value = "indexCache",key = "'xmlgetAccountById'+#id")
-	public Account getAccountById(int id);
+	@Cacheable(value = "indexCache",key = "'findAccountById'+#id")
+	public Account findAccountById(int id);
 
-	@Cacheable(value = "indexCache",key = "'xmlfindAccountsById'+#id")
-	public List<Account> findAccountsById(int id);
+	@Cacheable(value = "indexCache",key = "'findAccounts'")
+	public List<Account> findAccounts();
 }

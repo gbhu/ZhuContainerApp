@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="zhu.app.dao.CustomerServiceXmlDAO">
+
+    <select id="findCustomerServiceById" resultType="zhu.app.model.CustomerService">
+    <![CDATA[
+            select  id ,serviceId,serviceName, serviceQq,
+			 servicePhone ,serviceNick
+			 from CustomerService
+			 where
+			 id = #{id}
+        ]]>
+  </select>
+    <select id="findAllCustomerService" resultType="zhu.app.model.CustomerService">
+        <![CDATA[
+            select  id ,serviceId,serviceName, serviceQq,
+			 servicePhone ,serviceNick
+			 from CustomerService
+        ]]>
+    </select>
+    <insert id="insertCustomerService" parameterType="zhu.app.model.CustomerService"
+            keyColumn="`id`" keyProperty="`id`" useGeneratedKeys="true">
+        insert into CustomerService (serviceId,serviceName,serviceQq,servicePhone,serviceNick) values (#{serviceId},#{serviceName},#{serviceQq},#{servicePhone})
+    </insert>
+</mapper>

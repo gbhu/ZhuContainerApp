@@ -22,16 +22,6 @@ public class TestServiceImpl implements ITestService {
 
 	@Resource
 	private ITestDAO testDAO;
-	public void test() {
-	}
-
-	public boolean transfer(float money, int from, int to) throws Exception {
-		
-		this.testDAO.minusMoney(from, money);
-		//int i = 1/0;
-		this.testDAO.addMoney(to, money);
-		return true;
-	}
 	
 	public int insertAccount(Account account){
 		return this.testDAO.insertAccount(account);

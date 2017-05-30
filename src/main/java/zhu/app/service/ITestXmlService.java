@@ -13,5 +13,5 @@ public interface ITestXmlService {
 
 	public Account findAccountById(int i);
 	
-	public List<Account> findAccountsById(int i);
+	public List<Account> findAccounts();
 }

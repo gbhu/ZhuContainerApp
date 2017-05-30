@@ -3,35 +3,28 @@
 <mapper namespace="zhu.app.dao.ITestXmlDAO">
     <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache" />-->
     <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache"/>-->
-    <select id="findAccountsById" resultType="zhu.app.model.Account">
+    <insert id="insertAccount" parameterType="zhu.app.model.Account"
+            keyColumn="`id`" keyProperty="`id`" useGeneratedKeys="true">
+        insert into account (name,passwod,account) values (#{name},#{passwod},#{account})
+    </insert>
+    <select id="findAccounts" resultType="zhu.app.model.Account">
     <![CDATA[
-
-
             select  id as id,
 			 name as name,
-			 money as money
+			 passwod as passwod,
+			  account as account
 			 from account
-			 where
-			 id >= #{id}
-
-
         ]]>
   </select>
-    <select id="getAccountById" parameterType="int"
+    <select id="findAccountById" parameterType="int"
             resultType="zhu.app.model.Account">
     <![CDATA[
-
-
-            select  id as id,name as name,money as money
+            select  id as id,name as name,passwod as passwod,
+			  account as account
 			 from account
 			 where
 			id = #{id}
-
-
         ]]>
   </select>
-    <insert id="insertAccount" parameterType="zhu.app.model.Account"
-            keyColumn="`id`" keyProperty="`id`" useGeneratedKeys="true">
-        insert into account (name,money) values (#{name},#{money})
-    </insert>
+
 </mapper>

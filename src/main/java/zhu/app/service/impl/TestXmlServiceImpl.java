@@ -19,21 +19,19 @@ public class TestXmlServiceImpl implements ITestXmlService {
 
 	@Resource
 	private ITestXmlDAO testXmlDAO;
-	public void test() {
-	}
 
 	public int insertAccount(Account account){
+
 		return this.testXmlDAO.insertAccount(account);
 	}
 
 	public Account findAccountById(int i) {
 		
-		return this.testXmlDAO.getAccountById(i);
+		return this.testXmlDAO.findAccountById(i);
 	}
 
-	public List<Account> findAccountsById(int i) {
-		List<Account> accounts = this.testXmlDAO.findAccountsById(i);
-		return accounts;
+	@Override
+	public List<Account> findAccounts() {
+		return this.testXmlDAO.findAccounts();
 	}
-
 }

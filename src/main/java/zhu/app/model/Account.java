@@ -4,7 +4,8 @@ public class Account  {
 
 	private int id;
 	private String name;
-	private double money;
+	private String passwod;
+	private String account;
 	
 	public Account() {
 		super();
@@ -21,15 +22,20 @@ public class Account  {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getMoney() {
-		return money;
+
+	public String getPasswod() {
+		return passwod;
 	}
-	public void setMoney(double money) {
-		this.money = money;
+
+	public void setPasswod(String passwod) {
+		this.passwod = passwod;
 	}
-	@Override
-	public String toString() {
-		return "Account [id=" + id + ", name=" + name + ", money=" + money
-				+ "]";
+
+	public String getAccount() {
+		return account;
+	}
+
+	public void setAccount(String account) {
+		this.account = account;
 	}
 }
